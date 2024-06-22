@@ -1,0 +1,321 @@
+/*
+Color scheme:
+<unknown>
+*/
+
+* {
+  font-family: Segoe ui, Helvetica, sans-serif;
+  font-size: 15px;
+  color: black;
+}
+html body {
+  background-color: rgba(0,0,0,0);
+}
+html {
+  background: url('/background/Field_line_simulation_2.jpg') no-repeat 0 0;
+  background-color: white;
+  background-position: center top;
+  border-radius: 0; /*prevent rounded corners on everything*/
+}
+html .btn {
+  border-radius: 0; /*prevent rounded corners on buttons more importantly*/
+  margin: 0;
+}
+body {
+  background-color: rgba(0,0,0,0);
+  margin: 0;
+}
+
+#header {
+  min-height: 50px;
+}
+
+#header, #container, #footer {
+}
+
+#header > a:hover {
+  text-decoration: none;
+}
+
+#header p.h1, #header p.h1:hover {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  margin-right: 170px; /* same as .page-left so it centers correctly*/
+}
+
+#header .page-middle, #header .page-left {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.page-layout {
+  background: none;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.page-left {
+  display: block;
+  margin-top: 15px;
+  margin-right: 15px;
+  min-width: 170px;
+  max-width: 250px;
+}
+.page-middle {
+  display: block;
+  margin-top: 15px;
+  padding: 10px;
+  width: 1100px;
+  max-width: 1100px;
+}
+
+#content {
+  background-color: rgb(255,255,255);
+  border: 3px solid #A9A9A9;
+}
+#content li {
+  padding: inherit;
+}
+
+#home pre {
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0px;
+}
+#home a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+#home:hover {
+  background-color: #A9A9A9;
+}
+
+#sidemenu {
+}
+#sidemenu.active {
+  display: none;
+}
+
+#sidemenu .submenu {
+  margin-bottom: 15px;
+  background-color: white;
+  border: 3px solid #A9A9A9;
+}
+
+.submenu p {
+  margin: 0px;
+}
+
+.submenu .side p {
+  background-image: url("/assets/css/menu_element.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.submenu hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.submenu .block {
+  padding: 5px;
+  cursor: pointer;
+}
+.submenu .block:hover {
+  background-color: #A9A9A9;
+}
+
+.submenu .block p:after {
+  font-family: 'FontAwesome';
+  content: "\f077";
+  font-size: 13px;
+  margin-right: 10px;
+  float:right;
+}
+.submenu .block.collapsed p:after {
+  content: "\f078";
+}
+.submenu a {
+  text-decoration: none;
+  color: black;
+}
+.submenu a:hover {
+  background-color: #A9A9A9;
+}
+.submenu a:hover li:before {
+  margin-left: -10px;
+}
+.submenu a.current {
+  font-weight: 700;
+}
+
+.submenu li {
+  padding-left: 30px;
+}
+.submenu li:hover {
+  background-color: #A9A9A9;
+}
+.submenu li:before {
+  font-family: 'FontAwesome';
+  content: "\f101";
+  margin-left: -15px;
+  font-size: 15px;
+  float:left;
+}
+
+.submenu li p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.submenu .ext-link {
+  padding: 5px;
+}
+.submenu .ext-link:hover {
+  background-color: #A9A9A9;
+}
+
+#topmenu {
+}
+#topmenu a {
+  text-decoration: none;
+  color: black;
+}
+#topmenu a:hover {
+  background-color: #A9A9A9;
+}
+#topmenu .navbar-btn {
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#topmenu a {
+  margin-left: 15px;
+  display: inline-block;
+  padding: 10px;
+  border-left: solid 1px #CAEBF2;
+}
+
+/* use anywhere generic classes */
+@media screen and (max-width: 800px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+.highlight {
+  background-color: white;
+  padding: 10px;
+}
+
+.red {
+  color: red;
+  display: inline;
+}
+
+.quote { /*italic text*/
+  font-style: italic;
+  color: grey;
+}
+
+.width100 { /*div is width 100px*/
+  width: 100px;
+  float: left;
+}
+
+.widthrest {/*div is width the rest of the screen (used together)*/
+  overflow: hidden;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.code {
+  white-space: pre-wrap;
+  font-family: "Courier New", Courier, monospace;
+}
+
+canvas {
+  border: 1px solid black;
+}
+
+/* notes get a border and background colour */
+.note {
+	border-left: 1px #00F solid;
+	background-color: #E4E4FF;
+	padding: 0.3em;
+}
+
+/*Icons*/
+i.fa {
+  font-size: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+/*For Kaleidoscope*/
+.draggable:hover {
+  box-shadow:2px 2px 5px 5px #A9A9A9;
+}
+.draggable {
+  margin: 0;
+  padding: 0;
+}
+.piece {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  margin: 0;
+  padding: 0;
+}
+.rotate90 {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.rotate180 {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.rotate270 {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+/*For Clicker */
+#clickerBody table td {
+  padding-right: 3px;
+}
+
+
+/* java games page */
+#javagames img {
+  float: right;
+}
+
+/* Levenshtein */
+#resultTable.levenshtein td {
+	padding:2px;
+}
+#resultTable.levenshtein .color1 {
+	background-color: red;
+}
+#resultTable.levenshtein .color2 {
+	background-color: lightblue;
+}
+
+img {
+	max-width: 100%;
+}

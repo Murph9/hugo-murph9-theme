@@ -1,0 +1,10 @@
+name = 'murph9 theme'
+license = 'MIT'
+licenselink = 'https://github.com/Murph9/hugo-murph9-theme/blob/master/LICENSE'
+
+homepage = 'https://www.murph9.com'
+min_version = '0.84.0'
+
+[author]
+  name = 'Jake Murphy'
+  homepage = 'https://www.murph9.com'

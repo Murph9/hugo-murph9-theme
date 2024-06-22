@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <h3>Pages with the Tag: {{ .Title }}</h3>
+  <article>
+    <section>
+      {{ range .Pages }}
+        <a href="{{ .RelPermalink }}"><p><small>{{ time.Format "2006-Jan-02" .Date }}: </small>{{ .Title }}</p></a>
+      {{ end }}
+    </section>
+  </article>
+{{ end }}

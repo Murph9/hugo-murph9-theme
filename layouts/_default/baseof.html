@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    <header>
+      {{ partial "header.html" . }}
+    </header>
+    
+    <div id="container" class="page-layout">
+      <nav id="sidemenu" class="page-left">
+        <div class="submenu">
+          <a href="https://www.murph9.com">
+            <div class="block highlight side"><i class="fa fa-fw fa-home"></i>Murph9.com</div>
+          </a>
+
+          <hr />
+
+          <ul class="blockfit list-unstyled">
+          {{ range .Site.RegularPages }}
+            <a href="{{ .RelPermalink }}"><li class="{{ if eq $.RelPermalink .RelPermalink }}quote bold{{ end }}"><p><small>{{ time.Format "2006-Jan-02" .Date }}: </small>{{ .Title }}</p></li></a>
+          {{ end }}
+          </ul>
+          
+        </div>
+        <div class="submenu">
+          <a href="https://www.murph9.com/info">
+            <div class="ext-link" title="my info">
+              <img src="https://www.murph9.com/assets/images/guitar_heros_small.jpg" height="20" width="20">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+          </a>
+          <hr />
+          Tags:
+          <pre>{{ range .Site.Taxonomies.tags }}<a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})<br></a>{{ end }}</pre>
+        </div>
+      </nav>
+    
+      <main>
+        <div id="content" class="page-middle highlight">
+          {{ block "main" . }}{{ end }}
+        </div>
+        <footer>
+          {{ partial "footer.html" . }}
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

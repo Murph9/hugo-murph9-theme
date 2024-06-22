@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h4>Recent posts:</h4>
+  <div>
+    {{ range site.RegularPages.Limit 3 }}
+      <strong>{{ .Title }}</strong> <small>{{ time.Format "2006-01-02" .Date }}</small>
+      <p>
+        {{ .Summary }}
+      </p>
+      <a href="{{ .RelPermalink }}">Read more...</a>
+      <hr />
+    {{ end }}
+  </div>  
+{{ end }}
