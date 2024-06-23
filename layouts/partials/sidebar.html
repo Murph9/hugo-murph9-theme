@@ -1,0 +1,5 @@
+<ul class="blockfit list-unstyled">
+  {{ range .Site.RegularPages }}
+    <a href="{{ .RelPermalink }}"><li class="{{ if eq $.RelPermalink .RelPermalink }}quote bold{{ end }}"><p><small>{{ time.Format "2006-Jan-02" .Date }}: </small>{{ .Title }}</p></li></a>
+  {{ end }}
+</ul>

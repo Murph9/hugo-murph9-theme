@@ -17,17 +17,15 @@
 
           <hr />
 
-          <ul class="blockfit list-unstyled">
-          {{ range .Site.RegularPages }}
-            <a href="{{ .RelPermalink }}"><li class="{{ if eq $.RelPermalink .RelPermalink }}quote bold{{ end }}"><p><small>{{ time.Format "2006-Jan-02" .Date }}: </small>{{ .Title }}</p></li></a>
-          {{ end }}
-          </ul>
-          
+          {{ partial "sidebar.html" . }}
         </div>
+        
+        {{ partial "sidebar2.html" . }}
+      
         <div class="submenu">
-          <a href="https://www.murph9.com/info">
+          <a href="/info">
             <div class="ext-link" title="my info">
-              <img src="https://www.murph9.com/assets/images/guitar_heros_small.jpg" height="20" width="20">
+              <img src="https://www.murph9.com/images/guitar_heros_small.jpg" height="20" width="20">
               <i class="fa fa-info" aria-hidden="true"></i>
             </div>
           </a>
