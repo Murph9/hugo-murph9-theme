@@ -103,7 +103,7 @@ body {
 
 #sidemenu {
 }
-#sidemenu.active {
+#sidemenu.hide {
   display: none;
 }
 
@@ -118,7 +118,7 @@ body {
 }
 
 .submenu .side p {
-  background-image: url("/assets/css/menu_element.png");
+  background-image: url("/css/menu_element.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -210,9 +210,15 @@ body {
 }
 
 /* use anywhere generic classes */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
   .hide-mobile {
     display: none;
+  }
+  .page-layout {
+    justify-content: inherit;
+  }
+  .page-middle {
+    width: 100%;
   }
 }
 
