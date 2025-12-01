@@ -7,7 +7,7 @@
     <header>
       {{ partial "header.html" . }}
     </header>
-    
+
     <div id="container" class="page-layout">
       <nav id="sidemenu" class="page-left">
         <div class="submenu">
@@ -19,9 +19,9 @@
 
           {{ partial "sidebar.html" . }}
         </div>
-        
+
         {{ partial "sidebar2.html" . }}
-      
+
         <div class="submenu">
           <a href="/info">
             <div class="ext-link" title="my info">
@@ -30,11 +30,10 @@
             </div>
           </a>
           <hr />
-          Tags:
-          <pre>{{ range .Site.Taxonomies.tags }}<a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})<br></a>{{ end }}</pre>
+          {{ range .Site.Taxonomies.tags }}<a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})<br></a>{{ end }}
         </div>
       </nav>
-    
+
       <main>
         <div id="content" class="page-middle highlight">
           {{ block "main" . }}{{ end }}

@@ -1,36 +1,62 @@
 /*
-Color scheme:
-<unknown>
+Style for murph9.com theme
 */
 
+:root {
+  /* Muted but modern color palette (can be changed) */
+  --background-main: transparent;
+  --background-panel: #252519;
+  --background-highlight: #302f20;
+  --border-default: #848866;
+  --accent-light: #b39800;
+  --primary-text: #eaeaea;
+  --secondary-text: #7f8487;
+  --menu-selected-bg: #393e46;
+  --menu-hover-bg: #272720;
+  --menu-icon-bg: #2c2c1d;
+  --menu-icon-color: #b39800;
+  --link-hover: #b39800;
+}
+
 * {
-  font-family: Segoe ui, Helvetica, sans-serif;
+  font-family: Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 15px;
-  color: black;
+  color: var(--primary-text);
+  box-sizing: border-box;
 }
+
 html body {
-  background-color: rgba(0,0,0,0);
+  background-color: var(--background-main);
 }
+
 html {
-  background: url('/background/Field_line_simulation_2.jpg') no-repeat 0 0;
-  background-color: white;
-  background-position: center top;
+  background: url('/background/Field_line_simulation_2.jpg') no-repeat center top;
+  background-size: cover;
+  background-color: var(--background-main);
   border-radius: 0; /*prevent rounded corners on everything*/
 }
+
 html .btn {
-  border-radius: 0; /*prevent rounded corners on buttons more importantly*/
+  border-radius: 0;
   margin: 0;
+  background: var(--background-highlight);
+  color: var(--accent-light);
+  border: 1px solid var(--border-default);
+  transition: background 0.2s;
 }
+html .btn:hover {
+  background: var(--accent-light);
+  color: var(--background-main);
+}
+
 body {
-  background-color: rgba(0,0,0,0);
+  background: none;
   margin: 0;
 }
 
 #header {
   min-height: 50px;
-}
-
-#header, #container, #footer {
+  margin-bottom: 5px;
 }
 
 #header > a:hover {
@@ -39,11 +65,13 @@ body {
 
 #header p.h1, #header p.h1:hover {
   text-decoration: none;
-  color: black;
+  color: var(--accent-light);
   text-align: center;
   font-weight: bold;
   margin: 0;
-  margin-right: 170px; /* same as .page-left so it centers correctly*/
+  margin-right: 170px; /* same as .page-left so it centers correctly */
+  font-size: 2.2em;
+  letter-spacing: 2px;
 }
 
 #header .page-middle, #header .page-left {
@@ -61,6 +89,7 @@ body {
   align-items: stretch;
   padding-left: 10px;
   padding-right: 10px;
+  gap: 15px;
 }
 
 .page-left {
@@ -70,55 +99,77 @@ body {
   min-width: 170px;
   max-width: 250px;
 }
+
 .page-middle {
   display: block;
   margin-top: 15px;
-  padding: 10px;
+  padding: 14px;
   width: 1100px;
   max-width: 1100px;
 }
 
 #content {
-  background-color: rgb(255,255,255);
-  border: 3px solid #A9A9A9;
+  background-color: var(--background-panel);
+  border: 2px solid var(--border-default);
+  box-shadow: 0 2px 14px 2px #0003;
+  border-radius: 4px;
 }
+
 #content li {
   padding: inherit;
 }
 
-#home pre {
+#home pre,
+#content pre {
   cursor: pointer;
   font-size: 18px;
   margin: 0px;
+  background: var(--background-highlight);
+  padding: 10px;
+  border-radius: 3px;
+  color: var(--accent-light);
 }
-#home a {
+
+#home a,
+#content a {
   height: 100%;
   width: 100%;
   text-decoration: none;
-  color: black;
+  color: var(--primary-text);
 }
-#home:hover {
-  background-color: #A9A9A9;
+#home a:hover,
+#content a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+#home:hover, #content li:hover {
+  background-color: var(--menu-hover-bg);
 }
 
 #sidemenu {
 }
+
 #sidemenu.hide {
   display: none;
 }
 
 #sidemenu .submenu {
   margin-bottom: 15px;
-  background-color: white;
-  border: 3px solid #A9A9A9;
+  background-color: var(--background-highlight);
+  border: 2px solid var(--border-default);
+  border-radius: 4px;
+  box-shadow: 0 1px 4px #0001;
+  padding-top: 4px;
 }
 
 .submenu p {
   margin: 0px;
+  color: var(--accent-light);
 }
 
 .submenu .side p {
-  background-image: url("/css/menu_element.png");
+  /* background-image: url("/css/menu_element.png"); */
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -126,14 +177,20 @@ body {
 .submenu hr {
   margin-top: 5px;
   margin-bottom: 5px;
+  border-color: var(--border-default);
 }
 
 .submenu .block {
-  padding: 5px;
+  padding: 8px 10px;
   cursor: pointer;
+  background: none;
+  border-bottom: 1px solid var(--border-default);
+  transition: background 0.2s;
+  font-weight: 600;
 }
 .submenu .block:hover {
-  background-color: #A9A9A9;
+  background-color: var(--menu-hover-bg);
+  color: var(--accent-light);
 }
 
 .submenu .block p:after {
@@ -142,36 +199,40 @@ body {
   font-size: 13px;
   margin-right: 10px;
   float:right;
+  color: var(--menu-icon-color);
 }
 .submenu .block.collapsed p:after {
   content: "\f078";
 }
+
 .submenu a {
   text-decoration: none;
-  color: black;
+  color: var(--primary-text);
 }
 .submenu a:hover {
-  background-color: #A9A9A9;
-}
-.submenu a:hover li:before {
-  margin-left: -10px;
+  background-color: var(--menu-hover-bg);
+  color: var(--accent-light);
 }
 .submenu a.current {
   font-weight: 700;
 }
 
 .submenu li {
-  padding-left: 30px;
+  padding-left: 32px;
+  font-size: 15px;
+  border-left: 2px solid var(--accent-light);
 }
 .submenu li:hover {
-  background-color: #A9A9A9;
+  background-color: var(--menu-hover-bg);
 }
+
 .submenu li:before {
   font-family: 'FontAwesome';
   content: "\f101";
   margin-left: -15px;
   font-size: 15px;
   float:left;
+  color: var(--accent-light);
 }
 
 .submenu li p {
@@ -184,17 +245,24 @@ body {
   padding: 5px;
 }
 .submenu .ext-link:hover {
-  background-color: #A9A9A9;
+  background-color: var(--menu-hover-bg);
 }
 
 #topmenu {
 }
 #topmenu a {
   text-decoration: none;
-  color: black;
+  color: var(--primary-text);
+  background: var(--background-panel);
+  border-left: 2px solid var(--accent-light);
+  margin-left: 15px;
+  display: inline-block;
+  padding: 10px 14px;
+  transition: background 0.2s;
 }
 #topmenu a:hover {
-  background-color: #A9A9A9;
+  background: var(--menu-hover-bg);
+  color: var(--accent-light);
 }
 #topmenu .navbar-btn {
   margin: 0px;
@@ -202,12 +270,6 @@ body {
   padding-bottom: 10px;
 }
 
-#topmenu a {
-  margin-left: 15px;
-  display: inline-block;
-  padding: 10px;
-  border-left: solid 1px #CAEBF2;
-}
 
 /* use anywhere generic classes */
 @media screen and (max-width: 1200px) {
@@ -223,18 +285,19 @@ body {
 }
 
 .highlight {
-  background-color: white;
+  background-color: var(--background-highlight);
   padding: 10px;
+  border-radius: 2px;
 }
 
 .red {
-  color: red;
+  color: #ff4d4d;
   display: inline;
 }
 
 .quote { /*italic text*/
   font-style: italic;
-  color: grey;
+  color: var(--secondary-text);
 }
 
 .width100 { /*div is width 100px*/
@@ -253,17 +316,22 @@ body {
 .code {
   white-space: pre-wrap;
   font-family: "Courier New", Courier, monospace;
+  background: #181c20;
+  color: #79ff97;
+  padding: 6px;
+  border-radius: 2px;
 }
 
 canvas {
-  border: 1px solid black;
+  border: 1px solid var(--border-default);
 }
 
 /* notes get a border and background colour */
 .note {
-	border-left: 1px #00F solid;
-	background-color: #E4E4FF;
-	padding: 0.3em;
+  border-left: 2px solid #00ADB5;
+  background-color: #263346;
+  padding: 0.3em;
+  color: var(--primary-text);
 }
 
 /*Icons*/
@@ -271,40 +339,30 @@ i.fa {
   font-size: 16px;
   margin-left: 4px;
   margin-right: 4px;
+  color: var(--menu-icon-color);
 }
 
 /*For Kaleidoscope*/
 .draggable:hover {
-  box-shadow:2px 2px 5px 5px #A9A9A9;
+  box-shadow:2px 2px 5px 5px #393e4655;
 }
 .draggable {
   margin: 0;
   padding: 0;
 }
 .piece {
-  -webkit-transform: scale(1);
   transform: scale(1);
   margin: 0;
   padding: 0;
 }
-.rotate90 {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-.rotate180 {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-.rotate270 {
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
-}
+.rotate90 { transform: rotate(90deg);}
+.rotate180 {transform: rotate(180deg);}
+.rotate270 {transform: rotate(270deg);}
 
 /*For Clicker */
 #clickerBody table td {
   padding-right: 3px;
 }
-
 
 /* java games page */
 #javagames img {
@@ -313,15 +371,34 @@ i.fa {
 
 /* Levenshtein */
 #resultTable.levenshtein td {
-	padding:2px;
+  padding:2px;
 }
 #resultTable.levenshtein .color1 {
-	background-color: red;
+  background-color: #ff3333;
 }
 #resultTable.levenshtein .color2 {
-	background-color: lightblue;
+  background-color: #56ccf2;
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
+}
+
+#content, .submenu {
+  box-shadow: 0 1px 9px 2px #0002;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  /* Mismatched corners for DIY feel */
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Imperfect spacing, still readable */
+.page-middle, .page-left {
+  margin-bottom: 23px;
+}
+
+hr {
+  border-top: 1.6px dashed var(--border-default);
 }
