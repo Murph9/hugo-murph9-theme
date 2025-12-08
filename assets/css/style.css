@@ -25,6 +25,10 @@ Style for murph9.com theme
   box-sizing: border-box;
 }
 
+input, textarea, select, option { /* while we get out of bootstrap 3 */
+  color: black;
+}
+
 html body {
   background-color: var(--background-main);
 }
@@ -130,12 +134,16 @@ body {
   color: var(--accent-light);
 }
 
-#home a,
-#content a {
+
+#home a {
   height: 100%;
   width: 100%;
+}
+
+#home a,
+#content a {
   text-decoration: none;
-  color: var(--primary-text);
+  color: var(--link-hover);
 }
 #home a:hover,
 #content a:hover {
