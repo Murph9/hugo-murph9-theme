@@ -124,7 +124,8 @@ body {
 }
 
 #home pre,
-#content pre {
+#content pre,
+#sidemenu pre {
   cursor: pointer;
   font-size: 18px;
   margin: 0px;
