@@ -35,7 +35,6 @@ html body {
 
 html {
   background: url('/background/Field_line_simulation_2.jpg') no-repeat center top;
-  background-size: cover;
   background-color: var(--background-main);
   border-radius: 0; /*prevent rounded corners on everything*/
 }
@@ -73,7 +72,7 @@ body {
   text-align: center;
   font-weight: bold;
   margin: 0;
-  margin-right: 170px; /* same as .page-left so it centers correctly */
+  margin-right: 250px; /* same as .page-left so it centers correctly */
   font-size: 2.2em;
   letter-spacing: 2px;
 }
@@ -100,7 +99,7 @@ body {
   display: block;
   margin-top: 15px;
   margin-right: 15px;
-  min-width: 170px;
+  min-width: 250px;
   max-width: 250px;
 }
 
@@ -123,10 +122,7 @@ body {
   padding: inherit;
 }
 
-#home pre,
-#content pre,
-#sidemenu pre {
-  cursor: pointer;
+pre {
   font-size: 18px;
   margin: 0px;
   background: var(--background-highlight);
@@ -156,9 +152,7 @@ body {
   background-color: var(--menu-hover-bg);
 }
 
-#sidemenu {
-}
-
+/* sidemenu */
 #sidemenu.hide {
   display: none;
 }
@@ -189,29 +183,31 @@ body {
   border-color: var(--border-default);
 }
 
-.submenu .block {
-  padding: 8px 10px;
+.submenu ul {
+  margin: 0;
+  padding: 0px 10px;
   cursor: pointer;
   background: none;
-  border-bottom: 1px solid var(--border-default);
-  transition: background 0.2s;
-  font-weight: 600;
+  transition: all 0.2s;
 }
+
+.submenu li:hover,
 .submenu .block:hover {
+  cursor: pointer;
   background-color: var(--menu-hover-bg);
   color: var(--accent-light);
 }
 
 .submenu .block p:after {
   font-family: 'FontAwesome';
-  content: "\f077";
-  font-size: 13px;
-  margin-right: 10px;
-  float:right;
+  content: "\f078";
+  font-size: 1em;
+  margin-right: .3em;
+  float: right;
   color: var(--menu-icon-color);
 }
 .submenu .block.collapsed p:after {
-  content: "\f078";
+  content: "\f077";
 }
 
 .submenu a {
@@ -255,28 +251,6 @@ body {
 }
 .submenu .ext-link:hover {
   background-color: var(--menu-hover-bg);
-}
-
-#topmenu {
-}
-#topmenu a {
-  text-decoration: none;
-  color: var(--primary-text);
-  background: var(--background-panel);
-  border-left: 2px solid var(--accent-light);
-  margin-left: 15px;
-  display: inline-block;
-  padding: 10px 14px;
-  transition: background 0.2s;
-}
-#topmenu a:hover {
-  background: var(--menu-hover-bg);
-  color: var(--accent-light);
-}
-#topmenu .navbar-btn {
-  margin: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 
