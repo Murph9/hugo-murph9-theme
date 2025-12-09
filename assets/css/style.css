@@ -35,7 +35,7 @@ html body {
 
 html {
   background: url('/background/Field_line_simulation_2.jpg') no-repeat center top;
-  background-color: var(--background-main);
+  background-color: black;
   border-radius: 0; /*prevent rounded corners on everything*/
 }
 
